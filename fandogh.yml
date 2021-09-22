@@ -1,0 +1,14 @@
+kind: ExternalService
+name: proxy
+spec:
+  image_pull_policy: Always
+  port: 3000
+  source:
+    context: .
+    node_version: '14'
+    project_type: nodejs
+  allow_http: false
+  domains:
+    - name: proxy.tasagency.net
+  resources:
+    memory: 128Mi
